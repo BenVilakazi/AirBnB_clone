@@ -21,7 +21,20 @@ class BaseModel:
             models.storage.new(self)
             
     def __setattr__(self, name, value):
-        pass
+        """Maintain correct types for non string attr while keeping the attr as public
+        
+        args: name (str) name of attr 
+        value: val of associate with `name`
+        
+        raises: AttributeError: if value can't be parsed into correct format"""
+        if name in ['created_at', 'updated_at']:
+            if isinstance(value, str):
+                try:
+                    value = datetime.strptime(value, '%Y-%m-%dT%H:%M:%S.%f')
+                except ValueError:
+                    raise AttributeError("Invalid value: ({}) for name: ({})"
+                                         .format(value, name))
+        super().__setattr__(name, value)
     
     def __str__(self):
         """Format `self` for output"""
