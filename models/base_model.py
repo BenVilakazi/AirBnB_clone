@@ -25,7 +25,8 @@ class BaseModel:
     
     def __str__(self):
         """Format `self` for output"""
-        pass
+        return "[{}] [{}] {}".format(self.__class__.__name__,
+                                     self.id, self.__dict__)
     
     def save(self):
         """Updates the public instance attr updated_at"""
