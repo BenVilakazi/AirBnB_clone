@@ -29,7 +29,8 @@ class BaseModel:
     
     def save(self):
         """Updates the public instance attr updated_at"""
-        pass
+        self.updated_at = datetime.now()
+        models.storage.save()
     
     def to_dict(self):
         """Returns a Dictionary containing all key/value pairs of __dict__"""
