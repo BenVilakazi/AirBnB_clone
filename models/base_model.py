@@ -20,3 +20,17 @@ class BaseModel:
         if "id" not in kwargs:
             models.storage.new(self)
             
+    def __setattr__(self, name, value):
+        pass
+    
+    def __str__(self):
+        """Format `self` for output"""
+        pass
+    
+    def save(self):
+        """Updates the public instance attr updated_at"""
+        pass
+    
+    def to_dict(self):
+        """Returns a Dictionary containing all key/value pairs of __dict__"""
+        pass
