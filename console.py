@@ -24,8 +24,8 @@ class HBNBCommand(cmd.Cmd):
     def do_quit(self, line):
         """_summary_
 
-        Args:
-        quit : _exits the console_
+        quit :
+            _exits the console_
         """
         
         return True
@@ -34,7 +34,34 @@ class HBNBCommand(cmd.Cmd):
         pass
     
     def do_create(self, line):
-        pass
+        """_summary_
+
+        create:
+              
+              Creates a new instance of BaseModel, saves it and prints the id
+              
+              If the class name is missing, return class missing
+        """
+        if len(line) == 0:
+            print("** class name missing **")
+        else:
+            try:
+                cls = models.class_dict(line)
+            except KeyError:
+                print("** class doesn't exist **")
+            else:
+                obj = cls()
+                obj.save()
+                print(obj.id)
+                
+    def do_show(self, line):
+        """_summary_
+
+        show:
+            class name and id - print the string representation of an instance
+            
+            
+        """
     
     
     
