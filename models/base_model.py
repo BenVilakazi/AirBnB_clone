@@ -33,4 +33,9 @@ class BaseModel:
     
     def to_dict(self):
         """Returns a Dictionary containing all key/value pairs of __dict__"""
-        pass
+        d = {}
+        d.update(self.__dict__)
+        d['created_at'] = d['created_at'].isoformat()
+        d['updated_at'] = d['updated_at'].isoformat()
+        d['__class__'] = self.__class__.__name__
+        return d
