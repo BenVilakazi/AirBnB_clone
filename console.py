@@ -33,6 +33,9 @@ class HBNBCommand(cmd.Cmd):
     def emptyline(self):
         pass
     
+    def do_create(self, line):
+        pass
+    
     
     
 if __name__ == '__main__':
