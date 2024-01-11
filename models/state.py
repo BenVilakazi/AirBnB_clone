@@ -3,6 +3,7 @@
 
 import models
 
+
 class State(models.BaseModel):
     """Class State"""
     name = ""

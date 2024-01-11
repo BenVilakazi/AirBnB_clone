@@ -3,6 +3,7 @@
 
 import models
 
+
 class Place(models.BaseModel):
     """Class Place"""
     city_id = ""
