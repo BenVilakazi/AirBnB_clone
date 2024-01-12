@@ -1,7 +1,9 @@
+#!/usr/bin/python3
 import unittest
 from unittest.mock import patch
 from io import StringIO
 from models import console
+
 
 class TestConsole(unittest.TestCase):
 
@@ -67,6 +69,7 @@ class TestConsole(unittest.TestCase):
         cmd = console.HBNBCommand()
         cmd.do_count("")
         self.assertEqual(mock_stdout.getvalue(), "0\n")
+
 
 if __name__ == '__main__':
     unittest.main()
