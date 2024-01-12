@@ -1,6 +1,7 @@
 import unittest
 from models.amenity import Amenity
 
+
 class TestAmenity(unittest.TestCase):
     """Test suite for Amenity"""
 
@@ -20,6 +21,7 @@ class TestAmenity(unittest.TestCase):
         """Tests if amenity has the required attributes"""
         self.assertTrue(hasattr(self.amenity, 'name'))
         self.assertEqual(self.amenity.name, "")
+
 
 if __name__ == "__main__":
     unittest.main()
