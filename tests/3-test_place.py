@@ -1,5 +1,7 @@
+#!/usr/bin/python3
 import unittest
 from models import place
+
 
 class TestPlace(unittest.TestCase):
 
