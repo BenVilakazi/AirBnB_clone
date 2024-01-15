@@ -1,5 +1,6 @@
 import unittest
 
+from models import storage
 from unittest.mock import patch
 from io import StringIO
 from console import HBNBCommand
